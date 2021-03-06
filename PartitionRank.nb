@@ -1,0 +1,66 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      1686,         56]
+NotebookOptionsPosition[      1279,         41]
+NotebookOutlinePosition[      1735,         58]
+CellTagsIndexPosition[      1692,         55]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"From", " ", "Wolfram", " ", "Function", " ", 
+     RowBox[{"Repository", ":", " ", 
+      RowBox[{"Rank", " ", "of", " ", "a", " ", "partition"}]}]}], ",", " ", 
+    RowBox[{"x", "."}]}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"PartitionRank", "[", "x_", "]"}], ":=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"First", "@", "x"}], "-", 
+     RowBox[{"Length", "@", "x"}]}], "/;", 
+    RowBox[{
+     RowBox[{"ResourceFunction", "[", "\"\<IntegerPartitionQ\>\"", "]"}], "@",
+      "x"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.822233891304223*^9, 
+  3.8222339208103337`*^9}},ExpressionUUID->"d8ce9a29-9858-4a79-b428-\
+00ef43750d5a"]
+},
+WindowSize->{582.6, 492.59999999999997`},
+WindowMargins->{{
+  Automatic, 243.60000000000002`}, {-4.199999999999932, Automatic}},
+FrontEndVersion->"12.2 for Microsoft Windows (64-bit) (December 12, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"a42686ca-1018-49f0-bf4c-33a80126f6fd"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 717, 19, 68, "Input",ExpressionUUID->"d8ce9a29-9858-4a79-b428-00ef43750d5a"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

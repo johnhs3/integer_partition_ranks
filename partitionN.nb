@@ -1,0 +1,116 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      3828,        108]
+NotebookOptionsPosition[      3470,         94]
+NotebookOutlinePosition[      3875,        110]
+CellTagsIndexPosition[      3832,        107]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", "\[IndentingNewLine]", "\t", 
+   RowBox[{
+    RowBox[{"Name", ":", " ", 
+     RowBox[{
+     "partitionN", "\[IndentingNewLine]", " ", "Mathematical", " ", 
+      "Notation"}], ":", " ", 
+     RowBox[{"N", 
+      RowBox[{"(", 
+       RowBox[{"r", ",", "m", ",", "n"}], ")"}], "\[IndentingNewLine]", " ", 
+      RowBox[{"Desc", "."}]}], ":", " ", 
+     RowBox[{
+     "Gives", " ", "the", " ", "number", " ", "of", " ", "partitions", " ", 
+      "of", " ", "a", " ", "positive", " ", "integer"}]}], ",", " ", "n", ",",
+     " ", 
+    RowBox[{
+    "whose", " ", "RANK", " ", "is", " ", "congruent", " ", "to", " ", "r"}], 
+    ",", " ", 
+    RowBox[{"modulo", " ", 
+     RowBox[{
+     "m", ".", " ", "\[IndentingNewLine]", "\t", "\[IndentingNewLine]", 
+      "To"}], " ", "use"}], ",", " ", 
+    RowBox[{
+    "copy", " ", "the", " ", "definition", " ", "into", " ", "any", " ", 
+     "notebook", " ", "and", " ", "run", " ", 
+     RowBox[{"it", ".", " ", "It"}], " ", "has", " ", "no", " ", 
+     RowBox[{"dependencies", "."}]}]}], "\[IndentingNewLine]", "*)"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"partitionN", "[", 
+    RowBox[{"r_", ",", "m_", ",", "n_"}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"r0", "=", "r"}], ",", 
+       RowBox[{"m0", "=", "m"}], ",", 
+       RowBox[{"n0", "=", "n"}], ",", 
+       RowBox[{"counter", "=", "0"}], ",", "i", ",", "rank", ",", "list"}], 
+      "}"}], ",", "\[IndentingNewLine]", "\t", 
+     RowBox[{
+      RowBox[{"list", " ", "=", " ", 
+       RowBox[{"IntegerPartitions", "[", "n0", "]"}]}], ";", 
+      "\[IndentingNewLine]", "\t", 
+      RowBox[{"Do", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"rank", "=", 
+          RowBox[{
+           RowBox[{"Max", "[", 
+            RowBox[{"list", "[", 
+             RowBox[{"[", "i", "]"}], "]"}], "]"}], "-", 
+           RowBox[{"Length", "[", 
+            RowBox[{"list", "[", 
+             RowBox[{"[", "i", "]"}], "]"}], "]"}]}]}], ";", " ", 
+         "\[IndentingNewLine]", "\t", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Mod", "[", 
+             RowBox[{"rank", ",", "m0"}], "]"}], "\[Equal]", "r0"}], ",", 
+           RowBox[{"counter", "++"}]}], "]"}], ";"}], " ", ",", 
+        RowBox[{"{", 
+         RowBox[{"i", ",", 
+          RowBox[{"Length", "[", "list", "]"}]}], "}"}]}], "]"}], ";", 
+      "\[IndentingNewLine]", "counter"}]}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.8216470749678936`*^9, 3.821647186524236*^9}, {
+   3.821647242313361*^9, 3.821647327425658*^9}, {3.8216947127651577`*^9, 
+   3.8216947135472517`*^9}, {3.821694744246931*^9, 3.821694761482415*^9}, {
+   3.8216948098490973`*^9, 3.8216948120946302`*^9}, 
+   3.821695327381668*^9},ExpressionUUID->"a2cc9ac0-952c-4eab-850b-\
+1b780325882b"]
+},
+WindowSize->{1138.8, 574.8},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"12.2 for Microsoft Windows (64-bit) (December 12, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"19a7c27e-29c6-4ae1-8242-148656bd256f"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 2908, 72, 257, "Input",ExpressionUUID->"a2cc9ac0-952c-4eab-850b-1b780325882b"]
+}
+]
+*)
+

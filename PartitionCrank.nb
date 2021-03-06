@@ -1,0 +1,100 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      2901,         90]
+NotebookOptionsPosition[      2355,         74]
+NotebookOutlinePosition[      2764,         90]
+CellTagsIndexPosition[      2721,         87]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"From", " ", "the", " ", "Wolfram", " ", "Function", " ", 
+     RowBox[{"Repo", ":", " ", 
+      RowBox[{
+       RowBox[{"Dyson", "'"}], "s", " ", "Crank", " ", "of", " ", "a", " ", 
+       "Partition"}]}]}], ",", " ", 
+    RowBox[{"\[Lambda]", "."}]}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"PartitionCrank", "[", 
+     RowBox[{"{", "1", "}"}], "]"}], "=", "1"}], ";"}]}]], "Input",
+ CellChangeTimes->{{3.8222341369482584`*^9, 
+  3.822234174710259*^9}},ExpressionUUID->"ce04cc43-c92e-4a35-9b74-\
+d496207a3882"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"PartitionCrank\[Mu]", "[", "\[Lambda]_", "]"}], ":=", 
+  RowBox[{
+   RowBox[{"Count", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"#", ">", 
+        RowBox[{"Count", "[", 
+         RowBox[{"\[Lambda]", ",", "1"}], "]"}]}], "&"}], "/@", "\[Lambda]"}],
+      ",", "True"}], "]"}], "/;", 
+   RowBox[{
+    RowBox[{"ResourceFunction", "[", "\"\<IntegerPartitionQ\>\"", "]"}], "[", 
+    "\[Lambda]", "]"}]}]}]], "Input",ExpressionUUID->"decf36de-8415-4fa8-9b13-\
+7c9d570ac2b5"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"PartitionCrank", "[", "\[Lambda]_", "]"}], ":=", 
+  RowBox[{
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Count", "[", 
+       RowBox[{"\[Lambda]", ",", "1"}], "]"}], ">", "0"}], ",", 
+     RowBox[{
+      RowBox[{"PartitionCrank\[Mu]", "[", "\[Lambda]", "]"}], "-", 
+      RowBox[{"Count", "[", 
+       RowBox[{"\[Lambda]", ",", "1"}], "]"}]}], ",", 
+     RowBox[{"Max", "@", "\[Lambda]"}]}], "]"}], "/;", 
+   RowBox[{
+    RowBox[{"ResourceFunction", "[", "\"\<IntegerPartitionQ\>\"", "]"}], "[", 
+    "\[Lambda]", "]"}]}]}]], "Input",ExpressionUUID->"ed9a7959-cbd6-499d-b515-\
+949f597cc7d9"]
+},
+WindowSize->{582.6, 494.4},
+WindowMargins->{{Automatic, 261.6}, {18, Automatic}},
+FrontEndVersion->"12.2 for Microsoft Windows (64-bit) (December 12, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"12460e48-4e28-41f9-81b2-b61bc0fc3814"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 615, 16, 68, "Input",ExpressionUUID->"ce04cc43-c92e-4a35-9b74-d496207a3882"],
+Cell[1176, 38, 525, 15, 68, "Input",ExpressionUUID->"decf36de-8415-4fa8-9b13-7c9d570ac2b5"],
+Cell[1704, 55, 647, 17, 68, "Input",ExpressionUUID->"ed9a7959-cbd6-499d-b515-949f597cc7d9"]
+}
+]
+*)
+
+(* End of internal cache information *)
+
