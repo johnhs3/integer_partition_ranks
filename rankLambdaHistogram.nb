@@ -1,0 +1,252 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      9765,        244]
+NotebookOptionsPosition[      8157,        207]
+NotebookOutlinePosition[      8930,        232]
+CellTagsIndexPosition[      8849,        227]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"Rank", 
+    RowBox[{"(", "Lambda", ")"}], " ", 
+    RowBox[{"histogram", ".", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"for", " ", "5"}], "-", "03", "-", "2021"}], ")"}]}]}], " ", 
+   "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", "  ", 
+   RowBox[{"===", "===", "===", "===", "===", "===", "===", " ", 
+    RowBox[{"PARAMS", ":", " ", 
+     RowBox[{"===", "===", "===", "===", "===", "===", "==="}]}]}], " ", 
+   "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"n", "=", "25"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "===", "===", "===", "===", "===", "===", "===", "===", "===", "===", "===",
+      "===", "===", "===", "===", "===", "==="}], " ", "*)"}]}]}]], "Input",
+ CellChangeTimes->{{3.828985281015769*^9, 3.828985306144563*^9}, {
+  3.8289854811696587`*^9, 3.8289855253397617`*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"4b3ed29a-eea4-4ab9-9614-0d5ad566597e"],
+
+Cell[BoxData["25"], "Output",
+ CellChangeTimes->{3.828985761513358*^9},
+ CellLabel->"Out[1]=",ExpressionUUID->"c8d0ed2c-c583-4221-a587-c901b8472b66"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.828985534084852*^9, 3.8289855370637565`*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"ea2ed564-6bb5-4bc0-b3de-26a7ddb6c236"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"Stuff", ":"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"partitionN", "[", 
+     RowBox[{"r_", ",", "m_", ",", "n_"}], "]"}], ":=", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"r0", "=", "r"}], ",", 
+        RowBox[{"m0", "=", "m"}], ",", 
+        RowBox[{"n0", "=", "n"}], ",", 
+        RowBox[{"counter", "=", "0"}], ",", "i", ",", "rank", ",", "list"}], 
+       "}"}], ",", "\[IndentingNewLine]", "\t", 
+      RowBox[{
+       RowBox[{"list", " ", "=", " ", 
+        RowBox[{"IntegerPartitions", "[", "n0", "]"}]}], ";", 
+       "\[IndentingNewLine]", "\t", 
+       RowBox[{"Do", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"rank", "=", 
+           RowBox[{
+            RowBox[{"Max", "[", 
+             RowBox[{"list", "[", 
+              RowBox[{"[", "i", "]"}], "]"}], "]"}], "-", 
+            RowBox[{"Length", "[", 
+             RowBox[{"list", "[", 
+              RowBox[{"[", "i", "]"}], "]"}], "]"}]}]}], ";", " ", 
+          "\[IndentingNewLine]", "\t", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"Mod", "[", 
+              RowBox[{"rank", ",", "m0"}], "]"}], "\[Equal]", "r0"}], ",", 
+            RowBox[{"counter", "++"}]}], "]"}], ";"}], " ", ",", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", 
+           RowBox[{"Length", "[", "list", "]"}]}], "}"}]}], "]"}], ";", 
+       "\[IndentingNewLine]", "counter"}]}], "]"}]}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"PartitionRank", "[", "x_", "]"}], ":=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"First", "@", "x"}], "-", 
+      RowBox[{"Length", "@", "x"}]}], "/;", 
+     RowBox[{
+      RowBox[{"ResourceFunction", "[", "\"\<IntegerPartitionQ\>\"", "]"}], 
+      "@", "x"}]}]}]}]}]], "Input",
+ CellChangeTimes->{{3.8289853086655965`*^9, 3.8289853117181234`*^9}, {
+   3.8289854004169636`*^9, 3.8289854018532486`*^9}, 3.8289854382275734`*^9},
+ CellLabel->"In[3]:=",ExpressionUUID->"8bf84cdc-5e2f-4dee-884c-65988098b4e8"],
+
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{
+   RowBox[{"Build", " ", "set", " ", "of", " ", "partitions"}], ",", " ", 
+   RowBox[{"compute", " ", "the", " ", "rank", " ", "of", " ", 
+    RowBox[{"each", "."}]}]}], " ", "*)"}]], "Input",
+ CellChangeTimes->{{3.828985316572261*^9, 3.82898535170369*^9}},
+ CellLabel->"In[5]:=",ExpressionUUID->"d0a41b15-3144-4d41-8336-9d9b18f2c78d"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"allPartitions", " ", "=", " ", 
+   RowBox[{"IntegerPartitions", "[", "n", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"allranks", " ", "=", " ", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"Abs", "[", 
+      RowBox[{"PartitionRank", "[", "par", "]"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"par", ",", "allPartitions"}], "}"}]}], "]"}]}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.82898547629036*^9, 3.8289854781382227`*^9}, {
+  3.8289855410815907`*^9, 3.8289856803826056`*^9}, {3.828985723794118*^9, 
+  3.828985728913556*^9}},
+ CellLabel->"In[6]:=",ExpressionUUID->"ff8ef062-3f86-420b-8a40-b70c57a4626f"],
+
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{"Display", " ", "Histogram"}], " ", "*)"}]], "Input",
+ CellChangeTimes->{{3.8289853342967277`*^9, 3.8289853416884584`*^9}},
+ CellLabel->"In[8]:=",ExpressionUUID->"eafec620-d37f-494f-886a-cbf8ec48767b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Histogram", "[", "allranks", "]"}]], "Input",
+ CellChangeTimes->{{3.8289856962019987`*^9, 3.8289857001262236`*^9}},
+ CellTags->"Histogram_templates",
+ CellLabel->"In[9]:=",ExpressionUUID->"690137ca-0456-4ca2-94f8-0ecade1f69a3"],
+
+Cell[BoxData[
+ GraphicsBox[{
+   {RGBColor[0.987148, 0.8073604000000001, 0.49470040000000004`], EdgeForm[{
+    Opacity[0.511], Thickness[Small]}], {}, 
+    {RGBColor[0.987148, 0.8073604000000001, 0.49470040000000004`], EdgeForm[{
+     Opacity[0.511], Thickness[Small]}], RectangleBox[{-0.5, 0}, {0.5, 134.},
+      RoundingRadius->0], RectangleBox[{0.5, 0}, {1.5, 252.},
+      RoundingRadius->0], RectangleBox[{1.5, 0}, {2.5, 248.},
+      RoundingRadius->0], RectangleBox[{2.5, 0}, {3.5, 222.},
+      RoundingRadius->0], RectangleBox[{3.5, 0}, {4.5, 206.},
+      RoundingRadius->0], RectangleBox[{4.5, 0}, {5.5, 170.},
+      RoundingRadius->0], RectangleBox[{5.5, 0}, {6.5, 154.},
+      RoundingRadius->0], RectangleBox[{6.5, 0}, {7.5, 120.},
+      RoundingRadius->0], RectangleBox[{7.5, 0}, {8.5, 104.},
+      RoundingRadius->0], RectangleBox[{8.5, 0}, {9.5, 80.},
+      RoundingRadius->0], RectangleBox[{9.5, 0}, {10.5, 66.},
+      RoundingRadius->0], RectangleBox[{10.5, 0}, {11.5, 48.},
+      RoundingRadius->0], RectangleBox[{11.5, 0}, {12.5, 42.},
+      RoundingRadius->0], RectangleBox[{12.5, 0}, {13.5, 28.},
+      RoundingRadius->0], RectangleBox[{13.5, 0}, {14.5, 24.},
+      RoundingRadius->0], RectangleBox[{14.5, 0}, {15.5, 16.},
+      RoundingRadius->0], RectangleBox[{15.5, 0}, {16.5, 14.},
+      RoundingRadius->0], RectangleBox[{16.5, 0}, {17.5, 8.},
+      RoundingRadius->0], RectangleBox[{17.5, 0}, {18.5, 8.},
+      RoundingRadius->0], RectangleBox[{18.5, 0}, {19.5, 4.},
+      RoundingRadius->0], RectangleBox[{19.5, 0}, {20.5, 4.},
+      RoundingRadius->0], RectangleBox[{20.5, 0}, {21.5, 2.},
+      RoundingRadius->0], RectangleBox[{21.5, 0}, {22.5, 2.},
+      RoundingRadius->0], RectangleBox[{23.5, 0}, {24.5, 2.},
+      RoundingRadius->
+       0]}, {}, {}}, {{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, \
+{}, {}, {}, {}, {}, {}, {}, {}, {}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{-1., 0},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  PlotRange->{{-0.5, 24.5}, {All, All}},
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{3.828985771510633*^9},
+ CellTags->"Histogram_templates",
+ CellLabel->"Out[9]=",ExpressionUUID->"45fb39b8-0c4d-4896-9dcb-afa17f80d295"]
+}, Open  ]]
+},
+WindowSize->{1152., 585.6},
+WindowMargins->{{
+  Automatic, -5.399999999999864}, {-5.399999999999977, Automatic}},
+FrontEndVersion->"12.2 for Microsoft Windows (64-bit) (December 12, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"5df946eb-6f42-4abd-b78b-0f62903ce147"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "Histogram_templates"->{
+  Cell[5335, 148, 251, 4, 28, "Input",ExpressionUUID->"690137ca-0456-4ca2-94f8-0ecade1f69a3",
+   CellTags->"Histogram_templates"],
+  Cell[5589, 154, 2552, 50, 259, "Output",ExpressionUUID->"45fb39b8-0c4d-4896-9dcb-afa17f80d295",
+   CellTags->"Histogram_templates"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"Histogram_templates", 8559, 219}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 973, 23, 88, "Input",ExpressionUUID->"4b3ed29a-eea4-4ab9-9614-0d5ad566597e"],
+Cell[1556, 47, 149, 2, 32, "Output",ExpressionUUID->"c8d0ed2c-c583-4221-a587-c901b8472b66"]
+}, Open  ]],
+Cell[1720, 52, 172, 2, 28, "Input",ExpressionUUID->"ea2ed564-6bb5-4bc0-b3de-26a7ddb6c236"],
+Cell[1895, 56, 2101, 54, 146, "Input",ExpressionUUID->"8bf84cdc-5e2f-4dee-884c-65988098b4e8"],
+Cell[3999, 112, 381, 7, 28, "Input",ExpressionUUID->"d0a41b15-3144-4d41-8336-9d9b18f2c78d"],
+Cell[4383, 121, 678, 17, 49, "Input",ExpressionUUID->"ff8ef062-3f86-420b-8a40-b70c57a4626f"],
+Cell[5064, 140, 246, 4, 28, "Input",ExpressionUUID->"eafec620-d37f-494f-886a-cbf8ec48767b"],
+Cell[CellGroupData[{
+Cell[5335, 148, 251, 4, 28, "Input",ExpressionUUID->"690137ca-0456-4ca2-94f8-0ecade1f69a3",
+ CellTags->"Histogram_templates"],
+Cell[5589, 154, 2552, 50, 259, "Output",ExpressionUUID->"45fb39b8-0c4d-4896-9dcb-afa17f80d295",
+ CellTags->"Histogram_templates"]
+}, Open  ]]
+}
+]
+*)
+
