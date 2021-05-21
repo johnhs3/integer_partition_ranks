@@ -1,0 +1,112 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      3949,        104]
+NotebookOptionsPosition[      3555,         89]
+NotebookOutlinePosition[      3996,        106]
+CellTagsIndexPosition[      3953,        103]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", "\[IndentingNewLine]", "\t", 
+   RowBox[{
+    RowBox[{"Name", ":", " ", 
+     RowBox[{"Nmn", "\[IndentingNewLine]", " ", "Notation"}], ":", " ", 
+     RowBox[{"N", 
+      RowBox[{"(", 
+       RowBox[{"m", ",", "n"}], ")"}], "\[IndentingNewLine]", " ", 
+      RowBox[{"Desc", "."}]}], ":", " ", 
+     RowBox[{
+     "Gives", " ", "the", " ", "number", " ", "of", " ", "partitions", " ", 
+      "of", " ", "a", " ", "positive", " ", "integer"}]}], ",", " ", "n", ",",
+     " ", 
+    RowBox[{"whose", " ", "ranks", " ", "equal", " ", 
+     RowBox[{"m", ".", "\[IndentingNewLine]", "To"}], " ", "use"}], ",", " ", 
+    
+    RowBox[{
+    "copy", " ", "the", " ", "definition", " ", "into", " ", "any", " ", 
+     "notebook", " ", "and", " ", "run", " ", 
+     RowBox[{"it", ".", " ", "It"}], " ", "has", " ", "no", " ", 
+     RowBox[{"dependencies", "."}]}]}], "\[IndentingNewLine]", "*)"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Nmn", "[", 
+    RowBox[{"m_", ",", "n_"}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"m0", "=", "m"}], ",", 
+       RowBox[{"n0", "=", "n"}], ",", 
+       RowBox[{"counter", "=", "0"}], ",", "i", ",", "rank", ",", "list"}], 
+      "}"}], ",", "\[IndentingNewLine]", "\t", 
+     RowBox[{
+      RowBox[{"list", " ", "=", " ", 
+       RowBox[{"IntegerPartitions", "[", "n0", "]"}]}], ";", 
+      "\[IndentingNewLine]", "\t", 
+      RowBox[{"Do", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"rank", "=", 
+          RowBox[{
+           RowBox[{"Max", "[", 
+            RowBox[{"list", "[", 
+             RowBox[{"[", "i", "]"}], "]"}], "]"}], "-", 
+           RowBox[{"Length", "[", 
+            RowBox[{"list", "[", 
+             RowBox[{"[", "i", "]"}], "]"}], "]"}]}]}], ";", 
+         "\[IndentingNewLine]", "\t", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{"rank", " ", "\[Equal]", " ", "m0"}], ",", 
+           RowBox[{"counter", "++"}]}], "]"}], ";"}], " ", ",", 
+        RowBox[{"{", 
+         RowBox[{"i", ",", 
+          RowBox[{"Length", "[", "list", "]"}]}], "}"}]}], "]"}], ";", 
+      "\[IndentingNewLine]", "counter"}]}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.8290574349711943`*^9, 3.829057438520886*^9}, {
+  3.82905749194418*^9, 3.8290577140113373`*^9}, {3.8290577447467747`*^9, 
+  3.829057746298671*^9}, {3.829068954364088*^9, 3.829068955807795*^9}, {
+  3.829069004897778*^9, 3.8290690065825233`*^9}, {3.829069181308679*^9, 
+  3.829069182025918*^9}, {3.8290697172082233`*^9, 3.829069733873312*^9}, {
+  3.8295905686854563`*^9, 3.82959061339577*^9}, {3.829590689801812*^9, 
+  3.829590861382038*^9}, {3.8295915098876038`*^9, 3.8295915273036985`*^9}, {
+  3.8295916098434877`*^9, 3.829591635297076*^9}, {3.829591667633348*^9, 
+  3.829591672170059*^9}, {3.8295917419503455`*^9, 3.8295918009114637`*^9}},
+ CellLabel->"In[3]:=",ExpressionUUID->"bb51cd42-2726-4f94-a92a-6069aff17441"]
+},
+WindowSize->{1152., 585.6},
+WindowMargins->{{
+  Automatic, -5.399999999999864}, {-5.399999999999977, Automatic}},
+FrontEndVersion->"12.2 for Microsoft Windows (64-bit) (December 12, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"a5ebf6e3-e09d-46e8-9014-1d958bbe1d15"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 2993, 67, 244, "Input",ExpressionUUID->"bb51cd42-2726-4f94-a92a-6069aff17441"]
+}
+]
+*)
+
